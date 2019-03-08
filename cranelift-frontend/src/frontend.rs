@@ -806,6 +806,10 @@ impl<'a> FunctionBuilder<'a> {
             self.ins().store(flags, value, dest, offset);
         }
     }
+    /// Returns type of value
+    pub fn type_of(&self, value: Value) -> Type {
+        self.func.dfg.value_type(value)
+    }
 }
 
 fn greatest_divisible_power_of_two(size: u64) -> u64 {
